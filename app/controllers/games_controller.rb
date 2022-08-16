@@ -1,6 +1,8 @@
 class GamesController < ApplicationController
+  before_action :set_params, only: [:show, :edit, :update, :destroy]
+
   def index
-    @games = Games.all
+    @game = Games.all
   end
 
   def show
@@ -8,7 +10,7 @@ class GamesController < ApplicationController
   end
 
   def new
-    @game = Games.new
+    @game = Games.new()
   end
 
   def create
@@ -29,6 +31,10 @@ class GamesController < ApplicationController
   end
 
   private
+
+  def set_params
+    @game = Game.find(params[:id])
+  end
 
   def games_params
     params.require(:game).permit(:name, :genre, :price, :platform, :condition)
