@@ -1,33 +1,42 @@
 class GamesController < ApplicationController
+
   before_action :set_params, only: [:show, :edit, :update, :destroy]
 
+  # GET /games
+  # GET /games.json
   def index
-    @game = Games.all
+    @games = Game.all()
   end
 
+  # GET /games/1
+  # GET /games/1.json
   def show
-
   end
 
+  # GET /games/new
   def new
-    @game = Games.new()
+    @game = Game.new()
   end
 
+  # POST /games
+  # POST /games.json
   def create
-    @game = Games.new(games_params)
+    @game = Game.new(games_params)
     @game.save
   end
 
+  # GET /games/1/edit
   def edit
-
   end
 
+  #PATCH/PUT /games/1
+  #PATCH/PUT /games/1.json
   def update
-
   end
 
+  #DELETE /games/1
+  #DELETE /games/1.json
   def destroy
-
   end
 
   private

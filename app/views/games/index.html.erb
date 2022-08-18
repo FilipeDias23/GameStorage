@@ -1,0 +1,7 @@
+<ol>
+  <% @games.each do |game| %>
+    <li><h5><%= game.name %> - <%= game.genre %> for <%= game.platform %></h5>
+        <h5><%= game.price%>$ - <%= game.condition %></h5>
+    </li>
+  <% end %>
+</ol>
