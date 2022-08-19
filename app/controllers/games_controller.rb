@@ -7,11 +7,15 @@ class GamesController < ApplicationController
   def index
     @games = Game.all()
   end
+  #after action , automatically renders the index.json.jbuilder
+  #the jbuilder view will get acess to the @games array
 
   # GET /games/1
   # GET /games/1.json
   def show
   end
+  #after action , automatically renders the show.json.jbuilder
+  #the jbuilder view will get acess to the @game object (set_params) array
 
   # GET /games/new
   def new
