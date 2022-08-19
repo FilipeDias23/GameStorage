@@ -20,6 +20,9 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new()
+    render json: {
+      data: @game
+    }
   end
 
   # POST /games
