@@ -6,9 +6,6 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games = Game.all()
-    render json: {
-      data: @game
-    }
   end
   #after action , automatically renders the index.json.jbuilder
   #the jbuilder view will get acess to the @games array
